@@ -1,0 +1,4 @@
+[submodule "FreeRDP"]
+	path = FreeRDP
+	url = https://github.com/wowuyv/FreeRDP.git
+	branch = wasm-gfx
