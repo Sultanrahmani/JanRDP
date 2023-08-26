@@ -254,7 +254,7 @@ BOOL gfx_init(UINT32 width, UINT32 height, BYTE *outPtr, BYTE *inputPtr)
 uThreadFail:
 	gdi_graphics_pipeline_uninit(globalInstance->context->gdi, gfx);
 graphicsPipelineInitFail:
-	wasm_rdpgfx_free(gfx);
+	wasm_rdpgfx_free(&gfx);
 rdpgfxInitFail:
 	gdi_free(globalInstance);
 gdiInitFail:
@@ -281,7 +281,7 @@ void gfx_free()
 	{
 		RdpgfxClientContext *gfx = globalInstance->context->gdi->gfx;
 		gdi_graphics_pipeline_uninit(globalInstance->context->gdi, gfx);
-		wasm_rdpgfx_free(gfx);
+		wasm_rdpgfx_free(&gfx);
 		gdi_free(globalInstance);
 	}
 	update_free(globalInstance->update);

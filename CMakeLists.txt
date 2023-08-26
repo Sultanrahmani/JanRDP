@@ -12,7 +12,7 @@ add_definitions(
     -DWITH_POSIX_TIMER
     -DHAVE_PTHREAD_MUTEX_TIMEDLOCK 
     -sUSE_PTHREADS=1
-    -fsanitize=undefined  -gsource-map
+    # -fsanitize=undefined  -gsource-map
     -msimd128 -D__SSE3__ -D__SSSE3__ -D__SSE2__ -D__SSE__ -DWITH_SSE2
     -DFORCE_PRIMITIVES_ONLY_CPU)
 
@@ -175,7 +175,7 @@ add_executable(freerdp_gfx.js wasm/wasmMain.c ${SRC_FILE})
 
 target_link_options(freerdp_gfx.js PRIVATE
 -pthread
--fsanitize=undefined -gsource-map
+# -fsanitize=undefined -gsource-map
 # -sSSERTIONS
 -sPTHREAD_POOL_SIZE=5
 -sINITIAL_MEMORY=2gb
